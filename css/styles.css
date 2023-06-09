@@ -35,6 +35,25 @@
     flex-wrap: wrap;
     margin: 20px;
 }
+.titulo-inicio{
+display: flex;
+justify-content: center;
+text-align: center;
+align-items: center;
+align-content: center;
+margin-top: 10px;
+font-size: 25px;
+color: #e2bf8a;
+text-decoration-line:underline;
+}
+
+.card a {
+display: flex;
+justify-content: center;
+text-align: center;
+text-decoration: none;
+color: black;
+}
 .pie-de-pagina{
     background-color: #F5EFE7;
     display: flex;
@@ -48,6 +67,130 @@
     margin-top: 5px;
 }
 
+.row-inicio{
+display: flex;
+}
+.row{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    margin: 20px;
+    width: 330px;
+}
+.contactos-h3 h3{
+    font-size: 10px;
+}
+.link-wp a{
+    text-decoration: none;
+    color: black;
+    font-size: 10px;
+}
 
+.container-contacto{
+    display: inline-block;
+    justify-content: center;
+    margin-left: 250px;
+    margin-top: -180px;
+    width: 500px;
+}
+.boton-contactos{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
 
+.titulo-av{
+    margin: 20px;
+    font-size: 17px; 
+}
 
+.titulito {
+    background-color: #E3CAA5;
+    display: flex;
+    justify-content: center;
+    width: 260px;
+    
+    margin: 10px;
+}
+.titulito h3{
+   
+    font-size: 20px;
+    text-align: center;
+}
+.texto-turnero{
+    margin: 20px;
+}
+
+.turnero-form{
+    display: flex;
+    flex-direction: column;
+    flex-wrap:wrap;
+    justify-content: space-around;
+    /*align-items:flex-start;
+    align-content: flex-start;
+    text-align: end;*/
+    margin: 10px;
+    margin-top: -10px;
+    /*border: 1px solid black;*/
+}
+.formulario{
+    margin:20px;
+}
+.formulario-in{
+    margin-top: -20px;
+}
+.boton{
+    margin: 10px;
+    background-color: #E3CAA5;
+    border: #E3CAA5;
+}
+
+.turno-sol{
+    font-size: 15px;
+}
+.titulito-2{
+ background-color: #E3CAA5;
+    display: flex;
+    justify-content: center;
+    width: 280px;
+    
+    margin: 10px;   
+}
+.titulito-2 h2{
+    font-size: 15px;
+    margin-top: 5px;
+}
+.crear{
+    display: flex;
+    justify-content: center;
+    font-size: 15px;
+    margin-top: 10px;
+}
+.crear-1{
+display: flex;
+justify-content: center;
+align-items: center;
+align-content: center;
+font-size: 20px;
+color: #E3CAA5;
+margin-top: 20px; 
+}
+
+.crear-cuenta-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-content: center;
+    align-items: center;
+}
+.container{
+    display: flex;
+    justify-content:space-around;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+.row2{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}

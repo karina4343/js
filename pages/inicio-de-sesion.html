@@ -78,11 +78,7 @@
                       >Atencion veterinaria</a
                     >
                   </li>
-                  <li>
-                    <a class="dropdown-item" href="./venta-de-productos.html"
-                      >Venta de productos</a
-                    >
-                  </li>
+
                   <li><hr class="dropdown-divider" /></li>
                 </ul>
               </li>
@@ -101,8 +97,22 @@
       </nav>
     </header>
 
-    <main></main>
+    <main>
+      <h1 class="crear-1">INICIAR SECIÒN</h1>
+      <form class="crear-cuenta-form">
+        <label for="usuario">Usuario:</label>
+        <input type="text" id="usuario" name="usuario" required />
+
+        <label for="contraseña">Contraseña:</label>
+        <input type="password" id="contraseña" name="contraseña" required />
+
+        <button class="boton" type="submit" onclick="iniciarSesion()">
+          Iniciar sesión
+        </button>
+      </form>
+      <div id="mensaje"></div>
+    </main>
     <footer></footer>
-    <!--<script src="./app.js"></script>-->
+    <script src="../app.js"></script>
   </body>
 </html>
