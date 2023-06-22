@@ -59,71 +59,39 @@
                   >Inicio</a
                 >
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="./contacto.html">Contacto</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a
-                  class="nav-link dropdown-toggle"
-                  href="./servicios.html"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  Servicios
-                </a>
-                <ul class="dropdown-menu">
-                  <li>
-                    <a class="dropdown-item" href="./atencion-veterinaria.html"
-                      >Atencion veterinaria</a
-                    >
-                  </li>
 
-                  <li><hr class="dropdown-divider" /></li>
-                </ul>
+              <li class="nav-item">
+                <a class="nav-link" href="./pages/productos.html">Producto</a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./atencion-veterinaria.html"
+                  >Atencion Veterinaria</a
+                >
+              </li>
+              <h1 class="ver-carrito" id="verCarrito">
+                🛒<span id="cantidadCarrito" class="cantidad-carrito"></span>
+              </h1>
             </ul>
-          </div>
-          <div class="crear-inicio">
-            <a class="crear-cuenta" href="./crear-cuenta.html">CREAR CUENTA</a>
-            <a class="crear-cuenta" href="./inicio-de-sesion.html"
-              >INICIAR SECION</a
-            >
-            <div class="col">
-              <i class="fa-solid fa-cart-shopping"></i>
-            </div>
           </div>
         </div>
       </nav>
     </header>
 
     <main>
-      <h3 class="crear">
-        Comprá más rápido y llevá el control de tus pedidos, ¡en un solo lugar!
-      </h3>
-      <h1 class="crear-1">CREAR CUENTA</h1>
-      <form class="crear-cuenta-form">
-        <label for="usuario">Usuario:</label>
-        <input type="text" id="usuario" name="usuario" required />
+      <div>
+        <img src="../imagenes/VENTA2.png" class="d-block w-100" alt="" />
+      </div>
+      <h2 class="titulo-principal">Productos</h2>
+      <div id="contenedorProductos" class="contenedor-productos"></div>
 
-        <label for="contraseña">Contraseña:</label>
-        <input type="password" id="contraseña" name="contraseña" required />
-
-        <label for="confirmar_contraseña">Confirmar contraseña:</label>
-        <input
-          type="password"
-          id="confirmar_contraseña"
-          name="confirmar_contraseña"
-          required
-        />
-
-        <button class="boton" type="submit" onclick="crearCuenta()">
-          Crear cuenta
-        </button>
-      </form>
-      <div id="mensaje"></div>
+      <div id="carroContenedor" class="carro-contenedor"></div>
     </main>
-    <footer></footer>
+    <footer>
+      <div class="pie-de-pagina">
+        <p>Derechos de autor © 2023. 101 Patitas.</p>
+        <p>Contáctanos en info@101patitas.com</p>
+      </div>
+    </footer>
     <script src="../app.js"></script>
   </body>
 </html>
