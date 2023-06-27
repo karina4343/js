@@ -1,5 +1,5 @@
 //ATENCION VETERINARIA
-/*
+
 const turnoForm = document.getElementById('turno_form');
 const listaTurnos = document.getElementById('lista_turnos');
 
@@ -45,7 +45,7 @@ function agregarTurnoPendiente(turno) {
     turnoItem.innerHTML += `<p><strong>Observaciones:</strong> ${turno.observaciones}</p>`;
   }
   listaTurnos.appendChild(turnoItem);
-}*/
+}
 
 //PRODUCTOS
 const contenedorId = document.getElementById ("contenedorProductos");
