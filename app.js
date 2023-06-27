@@ -1,9 +1,10 @@
 //ATENCION VETERINARIA
 
-const turnoForm = document.getElementById('turno_form');
+const turnoForm = document.querySelector('#turno_form');
+
 const listaTurnos = document.getElementById('lista_turnos');
 
-turnoForm.addEventListener("click", (event) => {
+turnoForm.addEventListener("submit", (event) => {
   event.preventDefault();
   const nombre = document.getElementById('nombre').value;
   const telefono = document.getElementById('telefono').value;
@@ -13,39 +14,27 @@ turnoForm.addEventListener("click", (event) => {
   const hora = document.getElementById('hora').value;
   const observaciones = document.getElementById('observaciones').value;
 
+  // console.log(nombre, telefono, mascota, edad, fecha, hora, observaciones);
 
-  const turno = {
-    nombre,
-    telefono,
-    mascota,
-    edad,
-    fecha,
-    hora,
-    observaciones
-  };
+  pintarInfo(nombre, telefono, mascota, edad, fecha, hora, observaciones);
 
-  // para limpiara el formulario
-  turnoForm.reset();
-
-  // Agregar el turno a la lista de turnos solicitado
-  agregarTurnoPendiente(turno);
 });
+const pintarInfo = (nombre, telefono, mascota, edad, fecha, hora, observaciones) => {
+listaTurnos.innerHTML += `
+<p>${nombre}</p>
+<p>${telefono}</p>
+<p>${mascota}</p>
+<p>${edad}</p>
+<p>${fecha}</p>
+<p>${hora}</p>
+<p>${observaciones}</p>
 
-function agregarTurnoPendiente(turno) {
-  const turnoItem = document.createElement('li');
-  turnoItem.classList.add('turno_item');
-  turnoItem.innerHTML = `
-    <h3>${turno.mascota}</h3>
-    <p><strong>Dueño/a:</strong> ${turno.nombre}</p>
-    <p><strong>Teléfono:</strong> ${turno.telefono}</p>
-    <p><strong>Fecha:</strong> ${turno.fecha}</p>
-    <p><strong>Hora:</strong> ${turno.hora}</p>
-  `;
-  if (turno.observaciones !== '') {
-    turnoItem.innerHTML += `<p><strong>Observaciones:</strong> ${turno.observaciones}</p>`;
-  }
-  listaTurnos.appendChild(turnoItem);
+`
 }
+
+
+
+
 
 //PRODUCTOS
 const contenedorId = document.getElementById ("contenedorProductos");
@@ -68,7 +57,6 @@ const cantidadCarrito = document.getElementById("cantidadCarrito");
     <h3> ${product.descripcion} 
     <p class="precio"> $ ${product.precio} </p>
     `
-    contenedorProductos.append(content);
   
     let comprar = document.createElement("button");
     comprar.innerText = "Agregar al carrito";
@@ -192,11 +180,10 @@ const eliminarProducto = () => {
 };
 
 const carritocontenedor = () => {
-  cantidadCarrito.style.display = "block";
+ 
 
   const carritoLength= carrito.length;
   localStorage.setItem("carritoLegth" , JSON.stringify(carritoLength));
-  cantidadCarrito.innerText = JSON.parse(localStorage.getItem("carritoLegth"));
 };
 
 
