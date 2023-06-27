@@ -379,3 +379,10 @@ margin-top: 20px;
     color: #E3CAA5;
     text-decoration-line:underline;
   }
+
+  .restar{
+    cursor: pointer;
+  }
+  .sumar{
+    cursor: pointer;
+  }

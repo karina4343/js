@@ -1,0 +1,61 @@
+[
+    {
+     "id": 1,
+     "titulo": "Alimento balanceado para perro",
+     "descripcion": "ROYAL CANIN MINI ADULTO",
+     "precio": 2360,
+     "categoria": "Perro",
+     "imagen": "../imagenes/perros/royal1.png",
+     "cantidad" :1
+    },
+   
+    {
+     "id": 2,
+     "titulo": "Alimento balanceado para perro 2",
+     "descripcion": "ROYAL CANIN CANICHE ADULTO",
+     "precio": 2640,
+     "categoria": "Perro",
+     "imagen": "../imagenes/perros/royal2.png",
+     "cantidad" :1
+    },
+   
+    {
+     "id": 3,
+     "titulo": "Alimento balanceado para gato 1",
+     "descripcion": "PRO PLAN GATO STERILIZED",
+     "precio": 3699,
+     "categoria": "Gato",
+     "imagen": "../imagenes/gatos/gato1.png",
+     "cantidad" :1
+    },
+  
+    {
+      "id": 3,
+      "titulo": "Alimento balanceado para gato 2",
+      "descripcion": "EXCELLENT GATO KITTEN",
+      "precio": 2330,
+      "categoria": "Gato",
+      "imagen": "../imagenes/gatos/gato2.png",
+      "cantidad" :1
+     },
+  
+     {
+      "id": 3,
+      "titulo": "Accesorio para gato",
+      "descripcion": "RASCADOR TORRE COMARCA",
+      "precio": 28300,
+      "categoria": "Gatoaccesorio",
+      "imagen": "../imagenes/accesorios/accesorio10.png",
+      "cantidad" :1
+     },
+  
+     {
+      "id": 3,
+      "titulo": "Accesorio para perro",
+      "descripcion": "KONG BALL (CON SOGA)",
+      "precio": 7140,
+      "categoria": "Perroaccesorio",
+      "imagen": "../imagenes/accesorios/accesorio13.png",
+      "cantidad" :1
+     }
+   ]

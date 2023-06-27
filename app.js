@@ -3,7 +3,7 @@
 const turnoForm = document.getElementById('turno_form');
 const listaTurnos = document.getElementById('lista_turnos');
 
-turnoForm.addEventListener('submit', (event) => {
+turnoForm.addEventListener("click", (event) => {
   event.preventDefault();
   const nombre = document.getElementById('nombre').value;
   const telefono = document.getElementById('telefono').value;
@@ -54,111 +54,58 @@ const carroContenedor = document.getElementById("carroContenedor");
 const cantidadCarrito = document.getElementById("cantidadCarrito");
 
 
-const productos = [
-  {
-   id: 1,
-   titulo: "Alimento balanceado para perro",
-   descripcion: "ROYAL CANIN MINI ADULTO",
-   precio: 2360,
-   categoria: "Perro",
-   imagen: "../imagenes/perros/royal1.png",
-   cantidad :1,
-  },
+ let carrito = JSON.parse (localStorage.getItem("carrito")) || [];
+
+ const getProductos = async () => {
+  const respuesta =  await fetch("../data.json");
+  const info = await respuesta.json();
+
+  info.forEach ((product) =>{
+    let content = document.createElement("div");
+    content.className ="class";
+    content.innerHTML = `
+    <img src="${product.imagen}">
+    <h3> ${product.descripcion} 
+    <p class="precio"> $ ${product.precio} </p>
+    `
+    contenedorProductos.append(content);
+  
+    let comprar = document.createElement("button");
+    comprar.innerText = "Agregar al carrito";
+    comprar.className = "agregar";
+  
+    content.append(comprar);
+  
+  
+    comprar.addEventListener("click", () => {
+  
+      const repetido = carrito.some((repetidoProduct)=> repetidoProduct.id === product.id);
+  
+      if(repetido){
+        carrito.map((prod) => {
+          if(prod.id === product.id){
+            prod.cantidad ++;
+          }
+        });
+  
+  }else{
+      carrito.push({
+        id : product.id,
+        imagen: product.imagen,
+        descripcion : product.descripcion,
+        precio : product.precio,
+        cantidad : product.cantidad,
+   });
+  }
+          console.log(carrito);
+          carritocontenedor();
+          local();
+  });
+   });
+ };
+ getProductos();
+
  
-  {
-   id: 2,
-   titulo: "Alimento balanceado para perro 2",
-   descripcion: "ROYAL CANIN CANICHE ADULTO",
-   precio: 2640,
-   categoria: "Perro",
-   imagen: "../imagenes/perros/royal2.png",
-   cantidad :1,
-  },
- 
-  {
-   id: 3,
-   titulo: "Alimento balanceado para gato 1",
-   descripcion: "PRO PLAN GATO STERILIZED",
-   precio: 3699,
-   categoria: "Gato",
-   imagen: "../imagenes/gatos/gato1.png",
-   cantidad :1,
-  },
-
-  {
-    id: 3,
-    titulo: "Alimento balanceado para gato 2",
-    descripcion: "EXCELLENT GATO KITTEN",
-    precio: 2330,
-    categoria: "Gato",
-    imagen: "../imagenes/gatos/gato2.png",
-    cantidad :1,
-   },
-
-   {
-    id: 3,
-    titulo: "Accesorio para gato",
-    descripcion: "RASCADOR TORRE COMARCA",
-    precio: 28300,
-    categoria: "Gatoaccesorio",
-    imagen: "../imagenes/accesorios/accesorio10.png",
-    cantidad :1,
-   },
-
-   {
-    id: 3,
-    titulo: "Accesorio para perro",
-    descripcion: "KONG BALL (CON SOGA)",
-    precio: 7140,
-    categoria: "Perroaccesorio",
-    imagen: "../imagenes/accesorios/accesorio13.png",
-    cantidad :1,
-   }
- ];
-
- let carrito = [];
-
- productos.forEach ((product) =>{
-  let content = document.createElement("div");
-  content.className ="class";
-  content.innerHTML = `
-  <img src="${product.imagen}">
-  <h3> ${product.descripcion} 
-  <p class="precio"> $ ${product.precio} </p>
-  `
-  contenedorProductos.append(content);
-
-  let comprar = document.createElement("button");
-  comprar.innerText = "Agregar al carrito";
-  comprar.className = "agregar";
-
-  content.append(comprar);
-
-
-  comprar.addEventListener("click", () => {
-
-    const repetido = carrito.some((repetidoProduct)=> repetidoProduct.id === product.id);
-
-    if(repetido){
-      carrito.map((prod) => {
-        if(prod.id === product.id){
-          prod.cantidad ++;
-        }
-      });
-
-}else{
-    carrito.push({
-      id : product.id,
-      imagen: product.imagen,
-      descripcion : product.descripcion,
-      precio : product.precio,
-      cantidad : product.cantidad,
- });
-}
-        console.log(carrito);
-        carritocontenedor();
-});
- });
 
  const realizarCarrito = () => {
   carroContenedor.innerHTML = "";
@@ -189,12 +136,28 @@ carrito.forEach((product) =>{
   <img src="${product.imagen}">
   <h3> ${product.descripcion} 
   <p class="precio"> $ ${product.precio} </p>
+  <span class ="restar"> - </span>
   <p>Cantidad: ${product.cantidad}</p>
+  <span class ="sumar"> + </span>
   <p> Total : ${product.cantidad * product.precio}</p>
   `;
   carroContenedor.append(carritoContent);
 
-console.log(carrito.length);
+let restar = carritoContent.querySelector(".restar")
+restar.addEventListener ("click", () =>{
+  if(product.cantidad !== 1){
+     product.cantidad --;
+  }
+  local();
+  realizarCarrito();
+  });
+
+  let sumar= carritoContent.querySelector(".sumar");
+  sumar.addEventListener("click", () => {
+    product.cantidad++;
+    local();
+    realizarCarrito();
+  });
 
   let eliminar = document.createElement("span");
 
@@ -224,13 +187,25 @@ const eliminarProducto = () => {
     return carritoId !== foundId;
   });
   carritocontenedor ();
+  local();
   realizarCarrito();
 };
 
 const carritocontenedor = () => {
   cantidadCarrito.style.display = "block";
-  cantidadCarrito.innerText = carrito.length;
+
+  const carritoLength= carrito.length;
+  localStorage.setItem("carritoLegth" , JSON.stringify(carritoLength));
+  cantidadCarrito.innerText = JSON.parse(localStorage.getItem("carritoLegth"));
 };
+
+
+//set item 
+const local = () => {
+localStorage.setItem("carrito" , JSON.stringify(carrito));
+};
+
+carritocontenedor ();
 
 
 
