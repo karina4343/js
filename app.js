@@ -1,9 +1,9 @@
 //ATENCION VETERINARIA
 
-const turnoForm = document.getElementById('turno_form');
+const turnoForm = document.querySelector('#turno_form');
 const listaTurnos = document.getElementById('lista_turnos');
 
-turnoForm.addEventListener("click", (event) => {
+turnoForm.addEventListener("submit", (event) => {
   event.preventDefault();
   const nombre = document.getElementById('nombre').value;
   const telefono = document.getElementById('telefono').value;
@@ -13,41 +13,24 @@ turnoForm.addEventListener("click", (event) => {
   const hora = document.getElementById('hora').value;
   const observaciones = document.getElementById('observaciones').value;
 
-
-  const turno = {
-    nombre,
-    telefono,
-    mascota,
-    edad,
-    fecha,
-    hora,
-    observaciones
-  };
-
-  // para limpiara el formulario
-  turnoForm.reset();
-
-  // Agregar el turno a la lista de turnos solicitado
-  agregarTurnoPendiente(turno);
+pintarInfo(nombre,telefono,mascota,edad,fecha,hora, observaciones);
 });
 
-function agregarTurnoPendiente(turno) {
-  const turnoItem = document.createElement('li');
-  turnoItem.classList.add('turno_item');
-  turnoItem.innerHTML = `
-    <h3>${turno.mascota}</h3>
-    <p><strong>Dueño/a:</strong> ${turno.nombre}</p>
-    <p><strong>Teléfono:</strong> ${turno.telefono}</p>
-    <p><strong>Fecha:</strong> ${turno.fecha}</p>
-    <p><strong>Hora:</strong> ${turno.hora}</p>
-  `;
-  if (turno.observaciones !== '') {
-    turnoItem.innerHTML += `<p><strong>Observaciones:</strong> ${turno.observaciones}</p>`;
-  }
-  listaTurnos.appendChild(turnoItem);
+const pintarInfo =(nombre,telefono,mascota,edad,fecha,hora,observaciones) => {
+  listaTurnos.innerHTML += `
+  <p> ${nombre}</p>
+  <p>${telefono}</p>
+  <p> ${mascota}</p>
+  <p> ${edad}</p>
+  <p> ${fecha}</p>
+  <p> ${hora}</p>
+  <p> ${observaciones}</p>
+  `
 }
 
+
 //PRODUCTOS
+/*
 const contenedorId = document.getElementById ("contenedorProductos");
 const verCarrito = document.getElementById("verCarrito");
 const carroContenedor = document.getElementById("carroContenedor");
@@ -196,7 +179,7 @@ const carritocontenedor = () => {
 
   const carritoLength= carrito.length;
   localStorage.setItem("carritoLegth" , JSON.stringify(carritoLength));
-  cantidadCarrito.innerText = JSON.parse(localStorage.getItem("carritoLegth"));
+  cantidadCarrito.innerText=JSON.parse(localStorage.getItem("carritoLegth"));
 };
 
 
@@ -207,7 +190,7 @@ localStorage.setItem("carrito" , JSON.stringify(carrito));
 
 carritocontenedor ();
 
-
+*/
 
 
 
