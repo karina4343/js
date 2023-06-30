@@ -1,6 +1,10 @@
 //ATENCION VETERINARIA
 
 const turnoForm = document.querySelector('#turno_form');
+<<<<<<< HEAD
+=======
+
+>>>>>>> 26f891b1cc71a884636d3f5f570fbd91029c0031
 const listaTurnos = document.getElementById('lista_turnos');
 
 turnoForm.addEventListener("submit", (event) => {
@@ -13,9 +17,26 @@ turnoForm.addEventListener("submit", (event) => {
   const hora = document.getElementById('hora').value;
   const observaciones = document.getElementById('observaciones').value;
 
+<<<<<<< HEAD
 pintarInfo(nombre,telefono,mascota,edad,fecha,hora, observaciones);
-});
+=======
+  // console.log(nombre, telefono, mascota, edad, fecha, hora, observaciones);
 
+  pintarInfo(nombre, telefono, mascota, edad, fecha, hora, observaciones);
+
+>>>>>>> 26f891b1cc71a884636d3f5f570fbd91029c0031
+});
+const pintarInfo = (nombre, telefono, mascota, edad, fecha, hora, observaciones) => {
+listaTurnos.innerHTML += `
+<p>${nombre}</p>
+<p>${telefono}</p>
+<p>${mascota}</p>
+<p>${edad}</p>
+<p>${fecha}</p>
+<p>${hora}</p>
+<p>${observaciones}</p>
+
+<<<<<<< HEAD
 const pintarInfo =(nombre,telefono,mascota,edad,fecha,hora,observaciones) => {
   listaTurnos.innerHTML += `
   <p> ${nombre}</p>
@@ -29,6 +50,15 @@ const pintarInfo =(nombre,telefono,mascota,edad,fecha,hora,observaciones) => {
 }
 
 
+=======
+`
+}
+
+
+
+
+
+>>>>>>> 26f891b1cc71a884636d3f5f570fbd91029c0031
 //PRODUCTOS
 /*
 const contenedorId = document.getElementById ("contenedorProductos");
@@ -51,7 +81,6 @@ const cantidadCarrito = document.getElementById("cantidadCarrito");
     <h3> ${product.descripcion} 
     <p class="precio"> $ ${product.precio} </p>
     `
-    contenedorProductos.append(content);
   
     let comprar = document.createElement("button");
     comprar.innerText = "Agregar al carrito";
@@ -175,11 +204,14 @@ const eliminarProducto = () => {
 };
 
 const carritocontenedor = () => {
-  cantidadCarrito.style.display = "block";
+ 
 
   const carritoLength= carrito.length;
   localStorage.setItem("carritoLegth" , JSON.stringify(carritoLength));
+<<<<<<< HEAD
   cantidadCarrito.innerText=JSON.parse(localStorage.getItem("carritoLegth"));
+=======
+>>>>>>> 26f891b1cc71a884636d3f5f570fbd91029c0031
 };
 
 
