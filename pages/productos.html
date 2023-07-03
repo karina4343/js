@@ -59,15 +59,19 @@
                   >Inicio</a
                 >
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="./productos.html">Productos</a>
-              </li>
 
+              <li class="nav-item">
+                <a class="nav-link" href="./pages/productos.html">Producto</a>
+              </li>
               <li class="nav-item">
                 <a class="nav-link" href="./atencion-veterinaria.html"
                   >Atencion Veterinaria</a
                 >
               </li>
+
+              <h1 class="ver-carrito" id="verCarrito">
+                🛒<span id="cantidadCarrito" class="cantidad-carrito"></span>
+              </h1>
             </ul>
           </div>
         </div>
@@ -76,93 +80,12 @@
 
     <main>
       <div>
-        <img
-          src="../imagenes/banner-veterinaria3.png"
-          class="d-block w-100"
-          alt=""
-        />
+        <img src="../imagenes/VENTA2.png" class="d-block w-100" alt="" />
       </div>
-      <div class="titulo-av">
-        <i
-          class="fa-solid fa-house-medical-circle-check"
-          style="color: #00060f"
-        ></i>
-        EN 101 PATITAS TE BRINDAMOS LA MEJOR ATENCION PARA TU MASCOTA
-      </div>
-      <div class="titulito">
-        <h3>TURNERO</h3>
-      </div>
+      <h2 class="titulo-principal">Productos</h2>
+      <div id="contenedorProductos" class="contenedor-productos"></div>
 
-      <!--turnero-->
-      <form class="turnero-form" id="turno_form">
-        <label class="formulario" for="nombre">Nombre completo:</label>
-        <input
-          class="formulario-in"
-          type="text"
-          id="nombre"
-          name="nombre"
-          required
-        />
-
-        <label class="formulario" for="telefono">Teléfono:</label>
-        <input
-          class="formulario-in"
-          type="tel"
-          id="telefono"
-          name="telefono"
-          required
-        />
-
-        <label class="formulario" for="mascota">Nombre de la mascota:</label>
-        <input
-          class="formulario-in"
-          type="text"
-          id="mascota"
-          name="mascota"
-          required
-        />
-
-        <label class="formulario" for="edad">Edad de la mascota:</label>
-        <input
-          class="formulario-in"
-          type="number"
-          id="edad"
-          name="edad"
-          min="0"
-          max="100"
-        />
-
-        <label class="formulario" for="fecha">Fecha:</label>
-        <input
-          class="formulario-in"
-          type="date"
-          id="fecha"
-          name="fecha"
-          required
-        />
-
-        <label class="formulario" for="hora">Hora:</label>
-        <input
-          class="formulario-in"
-          type="time"
-          id="hora"
-          name="hora"
-          required
-        />
-
-        <label class="formulario" for="observaciones">Observaciones:</label>
-        <textarea
-          class="formulario-in"
-          id="observaciones"
-          name="observaciones"
-        ></textarea>
-
-        <button class="boton" type="submit">Solicitar turno</button>
-      </form>
-      <div class="titulito-2" id="turnos_pendientes">
-        <h2>TURNO SOLICITADO:</h2>
-        <ul id="lista_turnos"></ul>
-      </div>
+      <div id="carroContenedor" class="carro-contenedor"></div>
     </main>
     <footer>
       <div class="pie-de-pagina">
@@ -170,6 +93,6 @@
         <p>Contáctanos en info@101patitas.com</p>
       </div>
     </footer>
-    <script src="../app.js"></script>
+    <script src="../app2.js"></script>
   </body>
 </html>
