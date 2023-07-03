@@ -1,7 +1,6 @@
 //ATENCION VETERINARIA
 
 const turnoForm = document.querySelector('#turno_form');
-
 const listaTurnos = document.getElementById('lista_turnos');
 
 turnoForm.addEventListener("submit", (event) => {
