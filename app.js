@@ -17,7 +17,7 @@ turnoForm.addEventListener("submit", (event) => {
 
 pintarInfo(nombre,telefono,mascota,edad,fecha,hora, observaciones);
 
-  // console.log(nombre, telefono, mascota, edad, fecha, hora, observaciones);
+  
 
 
 });
